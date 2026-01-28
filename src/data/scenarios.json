@@ -1,0 +1,87 @@
+{
+  "level1": [
+    {
+      "id": "authority_urgency",
+      "type": "email",
+      "sender": "Bank Security <no-reply@secure-verify-bank.com>",
+      "subject": "Security Alert: Your Account is Scheduled for Suspension",
+      "context": "Dear Valued Customer, our systems detected unauthorized access attempts on your account. To prevent financial loss, your access will be suspended in 30 minutes. Please click below to verify your identity immediately: http://bit.ly/secure-login-3921",
+      "techniques": ["Authority", "Urgency"],
+      "choices": [
+        { "text": "Click the link and enter login details immediately", "outcome": "scam" },
+        { "text": "Reply to the email asking for confirmation", "outcome": "scam" },
+        { "text": "Ignore the link and open the official bank app", "outcome": "safe" },
+        { "text": "Call the bank using the number on the back of your card", "outcome": "safe" }
+      ],
+      "explanation": "Scammers impersonate banks and create urgency so victims act without verifying. Legitimate banks never ask for credentials via email links.",
+      "totalInLevel": 2
+    },
+    {
+      "id": "social_proof",
+      "type": "telegram",
+      "sender": "EasyCash Community 💸",
+      "context": "🔥 UNBELIEVABLE! Just received my second payout of $500 today! Thanks to the admin for this opportunity. There are only 5 spots left for the new automated bot. Join now before the link expires! 🚀🚀🚀 link: http://bit.ly/secure-login-3921",
+      "techniques": ["Social Proof"],
+      "choices": [
+        { "text": "Join the scheme since many people seem successful", "outcome": "scam" },
+        { "text": "Message group members privately to confirm earnings", "outcome": "scam" },
+        { "text": "Search online for reviews and complaints about the scheme", "outcome": "safe" },
+        { "text": "Leave the group without engaging", "outcome": "safe" }
+      ],
+      "explanation": "Fake screenshots and testimonials are commonly used to manipulate people by creating a false sense of popularity.",
+      "totalInLevel": 2
+    }
+  ],
+  "level2": [
+    {
+      "id": "romance_scam",
+      "type": "dating",
+      "sender": "Sarah ✨",
+      "context": "Hey! I've really enjoyed talking this week. I'm actually traveling near your city, but my banking app is locked and I can't pay for my taxi to the hotel. Could you quickly send $40 to my friend's PayPal? I'll pay you back double when I check in! ",
+      "techniques": ["Emotional Manipulation", "Urgency"],
+      "choices": [
+        { "text": "Send the money immediately to help her out", "outcome": "scam" },
+        { "text": "Ask for her bank details to try a different way", "outcome": "scam" },
+        { "text": "Suggest she contact her bank or family for help", "outcome": "safe" },
+        { "text": "Report the profile for suspicious financial requests", "outcome": "safe" }
+      ],
+      "explanation": "Romance scammers build quick emotional bonds and then create a 'minor crisis' to test if you will send money.",
+      "totalInLevel": 2
+    },
+    {
+      "id": "foot_in_door",
+      "type": "email",
+      "sender": "HR Global <hr-desk@career-portal.net>",
+      "subject": "Interview Selection: Remote Data Analyst Role",
+      "context": "Congratulations! You have been shortlisted for the Data Analyst position. Before we schedule your final interview with the manager, a one-time refundable document processing fee of $25 is required to activate your profile in our system.",
+      "techniques": ["Foot-in-the-Door"],
+      "choices": [
+        { "text": "Pay the small amount since it seems reasonable", "outcome": "scam" },
+        { "text": "Negotiate and ask if payment can be done later", "outcome": "scam" },
+        { "text": "Refuse to pay and ask for official company verification", "outcome": "safe" },
+        { "text": "Check the company’s official website for hiring policies", "outcome": "safe" }
+      ],
+      "explanation": "Once a victim pays a small amount, scammers increase demands. Legitimate employers do not charge fees for interviews.",
+      "totalInLevel": 2
+    }
+    
+  ],
+  "level3": [
+    {
+      "id": "norm_authority",
+      "type": "email",
+      "sender": "Income Tax Department <alerts@gov-it-tax.org>",
+      "subject": "LEGAL NOTICE: Discrepancy in PAN/Aadhaar Linking",
+      "context": "FINAL WARNING: Our records show a discrepancy in your tax filings. Failure to update your KYC details immediately via the link below will result in a penalty of $500 and potential legal action under Section 144. Click here to resolve: http://gov-portal-verify.in",
+      "techniques": ["Norm Activation", "Authority", "Fear"],
+      "choices": [
+        { "text": "Submit the requested details immediately", "outcome": "scam" },
+        { "text": "Call the number provided in the email", "outcome": "scam" },
+        { "text": "Verify the claim through official government portals", "outcome": "safe" },
+        { "text": "Ignore the message and report it as phishing", "outcome": "safe" }
+      ],
+      "explanation": "Government agencies do not demand sensitive information via emails or links. Fear is used to force quick compliance.",
+      "totalInLevel": 1
+    }
+  ]
+}
